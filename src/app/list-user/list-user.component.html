@@ -1,0 +1,32 @@
+Customer <br>
+ Blocked Account <br>
+ Admin <br>
+categorie : <input type="text" [(ngModel)]="category" >
+<ul>
+  <div *ngFor="let u of list; let j=index;
+  let f=first; let l=last; let o=odd; let e=even " >
+
+<li *ngIf="u.accountCategory == category">
+<div class="cards">
+  <div class="card active">
+
+
+
+  <div  class="card"[style.color]="f ? 'red' : green" [style.fontSize.px]="f ? '9' : '20'">**{{j}}**  {{u.id}} - {{u.firstName}}
+  --position : {{o}}--
+  - <img [src]="u.picture">
+</div>
+   <div [class]="f ? maclasse1 : maclasse2">
+     test class
+   </div>
+  <button [disabled]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+    <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
+    <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br> <br> <br> <br> <br> <br>
+  </li>
+</div>
+</ul>
