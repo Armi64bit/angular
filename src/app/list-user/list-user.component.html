@@ -20,8 +20,8 @@ categorie : <input type="text" [(ngModel)]="category" >
      test class
    </div>
   <button [disabled]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
-    <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
-    <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button>
+    <!-- <button *ngIf="u.accountCategory != 'Admin'" (click)="delete(j)" >Delete</button>
+    <button [hidden]="u.accountCategory === 'Admin'" (click)="delete(j)" >Delete</button> -->
   </div>
   </div>
   <br>
