@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../models/user';
+import { User } from '../../../models/user';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,15 +14,17 @@ export class ListUserComponent {
   constructor(private ac: ActivatedRoute) {
     //injecter le service activatedroute ce composant
     ac.snapshot.paramMap.get('');
-    console.log(this.ac.snapshot.paramMap.get(''));
+    // console.log(this.ac.snapshot.paramMap.get(''));
   }
 
   //methode hook qui fait partie de cycle de vie d'un composant
   //apple automatiquement apres la creaction du composant
   ngOnInit() {
-    console.log(this.ac.snapshot.params['category']);
-this.category=this.ac.snapshot.params['category'];
+    // console.log(this.ac.snapshot.params['category']);
+// this.category=this.ac.snapshot.params['category'];
     console.log("init listuser");
+    this.ac.paramMap.subscribe(res=>this.category=this.ac.snapshot.paramMap.get('category'))
+    // this.category= this.ac.snapshot.paramMap.get('category');
 
   }
   green: string = 'green';
