@@ -25,7 +25,7 @@ export class ListUserComponent {
     this.list=this.us.getAllUser();
     // console.log(this.ac.snapshot.params['category']);
 // this.category=this.ac.snapshot.params['category'];
-    console.log("init listuser");
+    console.log( this.list);
     this.ac.paramMap.subscribe(res=>this.category=this.ac.snapshot.paramMap.get('category'))
     // this.category= this.ac.snapshot.paramMap.get('category');
 
